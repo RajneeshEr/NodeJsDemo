@@ -1,5 +1,5 @@
 {
-  "name": "NodeJsDemo",
+  "name": "nodejsdemo",
   "version": "1.0.0",
   "description": "Try to cover most used framework of Node Js",
   "main": "index.js",
