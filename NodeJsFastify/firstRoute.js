@@ -1,10 +1,13 @@
 //const fastify = require('fastify')
 
-async function route(fastify, options){
-    fastify.get('/',response)
+const path = '/'
+
+const route = async (fastify, options)=>{
+    // await can ‘wait’ for a async function to resolve or reject a value
+    await fastify.get(path,response)
 }
 
-async function response(request, response){
+const response = async (request, response)=>{
     response.send({
         "FirstName":'Rajneesh',
         "LastName":'Yadav',
@@ -12,4 +15,4 @@ async function response(request, response){
     })
 }
 
-module.exports = route;
+module.exports = route
