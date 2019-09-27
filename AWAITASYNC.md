@@ -7,14 +7,14 @@ e.g. async function foo(){...} or async () => {...}
 
 3). Important! await can only be used inside an async function.
 
-4). awiat block the code, next line code wouldn't execute by node interprator, utill the promise will not resolve.
+4). awiat block the code, next line code wouldn't execute by node interpreter, utill the promise will not resolve.
 
                     async function printAll(){
                             await printString("A")  //1
                             await printString("B")  //2
                             await printString("C")  //3
                     }
-After executing line 1, interprator will wait for promise response, till that next line of code blocked.
+Executing line 1, interpreter will wait for promise response, till that time being next line of code blocked.
 
                     function printString(string){
                         return new Promise((resolve, reject) => {
