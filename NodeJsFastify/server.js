@@ -1,7 +1,5 @@
-const fastify = require('fastify')({
-    logger: true,
-    ignoreTrailingSlash: true // string used to determine how to handle passing / as a route with a prefix.
-})
+const fastify = require('./app')
+var port = process.env.PORT || 3000;
 
 // registers both "/foo" and "/foo/"
 fastify.get('/foo/', function (req, reply) {
@@ -14,7 +12,7 @@ fastify.register(require('./firstRoute'))
 //I used async/await and promise in this route
 fastify.register(require('./routes/fastifyRoutes'))
 
-fastify.listen(3001, async (error, address) => {
+fastify.listen(port, async (error, address) => {
     if(error){
         fastify.log.error(error)
         process.exit(1)

@@ -1,41 +1,8 @@
+//This file will be used for configuring the app, and that alone
+
 const fastify = require('fastify')({
-    logger:true
+    logger: true,
+    ignoreTrailingSlash: true // string used to determine how to handle passing / as a route with a prefix.
 })
 
-//Declare a route 
-// fastify.get('/',(_request, response, _query)=>{
-//     response.send({
-//         "Name":'Rajneesh',
-//         "Age":'26'
-//     })
-// })
-
-// fastify.listen(3000, (err, address)=>{
-//     if(err){
-//         fastify.log.error(err)
-//     }
-//     fastify.log.info(`server is listening on ${address}`)
-// })
-
-
-//Declare a route with async
-
-fastify.get('/', async(_request, _response)=>{
-
-    _response.send({
-        "Name":'Rajneesh'
-    })
-})
-
-
-const start = async() => {
-     try {
-         fastify.listen(3000, (erro, address) => {
-             //fastify.log.info(`Server listing on ${address}`)
-         })
-     } catch (error) {
-         fastify.log.error(error)
-     }
-}
-
-start()
+module.exports=fastify

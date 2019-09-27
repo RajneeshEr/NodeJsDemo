@@ -1,4 +1,4 @@
-const path ='/home'
+const path ='/'
 
 const options = {
     schema : {
